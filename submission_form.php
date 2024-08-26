@@ -6,6 +6,21 @@
 <body>
 
 <?php
+
+//set the database connection variables
+$servername ="localhost";
+$username ="root";
+$password ="user";
+$dbname ="selenium";
+
+//create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if($conn->connect_error)
+{
+    die("Connection failed: " . $conn->connect_error);
+}
+
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
@@ -13,6 +28,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
     $age = htmlspecialchars($_POST['age']);
+
+    //insert the data into the database
+    $sql = "INSERT INTO form_data(name, email, phone, age) VALUES ('$name', '$email', '$phone', '$age')";
+
+    if ($conn->query($sql) === TRUE)
+    {
+        echo "New record created succesfully";
+    } else 
+    {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
     
     // Display the submitted data
     echo "<h3>Form Submitted:</h3>";
@@ -22,6 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Age: " . $age . "<br>";
     
 }
+
+$conn->close();
 ?>
 
 <!-- HTML Form -->
