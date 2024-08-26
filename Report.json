@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Romeo Paul",
+    "email": "romeopaul1998@gmail.com",
+    "role_name": "Noob"
+  },
+  {
+    "name": "Ronaldo",
+    "email": "admin@gmail.com",
+    "role_name": "Admin"
+  },
+  {
+    "name": "Derin",
+    "email": "admin@gmail.com",
+    "role_name": "User"
+  },
+  {
+    "name": "Paul Mathew ",
+    "email": "verdentta@gmail.com",
+    "role_name": "Intern"
+  },
+  {
+    "name": "Alice Paul ",
+    "email": "mercermelloy@gmail.com",
+    "role_name": "Expert"
+  },
+  {
+    "name": "Jess",
+    "email": "meowmeow@gmail.com",
+    "role_name": "Boss"
+  },
+  {
+    "name": "Jordan",
+    "email": "lol@gmail.com",
+    "role_name": "User"
+  }
+]
