@@ -23,6 +23,7 @@ time.sleep(5)
 title_list = []
 year_list=[]
 rating_list=[]
+edited_title_list=[]
 
 #method to remove numbers from the movie titles
 def remove_digits(strings):
@@ -52,13 +53,15 @@ while flag == 0:
     flag = 1
 
 #remove the numbers from the movie titles
-title_list2 = remove_digits(title_list)
+for title in title_list:
+    title = title.split(". ", 1)[1]
+    edited_title_list.append(title)
 
 time.sleep(5) 
 driver.quit()
 
 #create the dataframe from the lists
-df = pd.DataFrame({'Title': title_list2, 'Year': year_list, 'Rating': rating_list })
+df = pd.DataFrame({'Title': edited_title_list, 'Year': year_list, 'Rating': rating_list })
 
 # Display the DataFrame
 print(df)
